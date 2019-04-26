@@ -2,6 +2,7 @@ training-python
 =============
 Roadmap to Python Learning
 
+
 ## Books: 
 * Fluent Python 2015
 * Learn Python the Hard Way : https://learnpythonthehardway.org/
@@ -16,6 +17,7 @@ Roadmap to Python Learning
 ## Visual studio code
 * Getting started with VSC: https://code.visualstudio.com/docs/introvideos/basics
 * Getting started with Python in VS Code: https://code.visualstudio.com/docs/python/python-tutorial
+* Getting started with Django Tutorial in VS Code https://code.visualstudio.com/docs/python/tutorial-django
 
 
 ## Resources
