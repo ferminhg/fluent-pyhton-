@@ -28,5 +28,6 @@ Roadmap to Python Learning
 
 
 ## Resources
-http://datasciencemasters.org/
-https://realpython.com/switching-to-python/ 
+* http://datasciencemasters.org/
+* https://realpython.com/switching-to-python/ 
+* List of emojis on MD https://gist.github.com/rxaviers/7360908
