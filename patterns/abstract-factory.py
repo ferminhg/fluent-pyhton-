@@ -1,3 +1,9 @@
+# Provide an interface for creating families of
+# related or dependent objects without specifying 
+# their concrete classes.
+# Use when system should be independent of how 
+# what it is producing is structured or represented.
+
 def droidProducer(kind):
     if kind == 'battle':
         return battleDroidPattern
