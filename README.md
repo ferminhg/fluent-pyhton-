@@ -13,6 +13,8 @@ Roadmap to Python Learning
 * Python Class / Google: https://developers.google.com/edu/python/?csw=1
 * Data Analysis: https://mode.com/python-tutorial/ 
 * How You Can Switch Languages And Get Up to Speed With Python as Quickly as Possible https://realpython.com/switching-to-python/
+* Patterns http://designpatternsgame.com/patterns 
+
 
 ## Testing
 * TDD with pyTest https://realpython.com/courses/test-driven-development-pytest/
