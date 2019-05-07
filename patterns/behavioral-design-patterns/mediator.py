@@ -18,7 +18,7 @@ class Airplane:
         self.trafficTower.airplanes.append(self)
     
     def requestPositions(self):
-        self.trafficTower.requestPositions()
+        return self.trafficTower.requestPositions()
 
 
 def main():
