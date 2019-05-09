@@ -10,13 +10,13 @@ class TrafficTower:
 
     def requestPositions(self):
         return list(map(lambda airplane: airplane.position, self.airplanes))
-    
+
 class Airplane:
     def __init__(self, position, trafficTower):
         self.position = position
         self.trafficTower = trafficTower
         self.trafficTower.airplanes.append(self)
-    
+
     def requestPositions(self):
         return self.trafficTower.requestPositions()
 
