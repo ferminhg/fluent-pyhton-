@@ -9,7 +9,7 @@ class TrafficTower:
         self.airplanes = []
 
     def requestPositions(self):
-        return list(map(lambda airplane: airplane.position, self.airplanes))
+        return [airplane.position for airplane in self.airplanes]
 
 class Airplane:
     def __init__(self, position, trafficTower):

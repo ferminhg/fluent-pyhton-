@@ -22,7 +22,6 @@ class Product():
     def notifyAll(self):
         return [el.update(self) for el in self.actions]
     
-
 class Fees:
     def update(self, product):
         product.price = product.price * 1.2
