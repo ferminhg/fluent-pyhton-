@@ -36,14 +36,42 @@ Optional: define a helper function to avoid code duplication inside
 print_words() and print_top().
 
 """
-
+import codecs
 import sys
+import operator
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
+
+def count_words_from_list(list_words):
+  list_words = [word.lower() for word in list_words]
+  words_hits = {i:list_words.count(i) for i in list_words}
+  return words_hits    
+
+def get_dict_words(filename):
+  file = codecs.open(filename, 'rU', 'utf-8')
+  words_hists = {}
+
+  for line in file:
+    count_words = count_words_from_list(line.split())
+    for word in count_words.keys():
+      if words_hists.get(word) == None:
+        words_hists[word] = count_words[word]
+      else:
+        words_hists[word] += count_words[word]
+  return words_hists
+
+def print_words(filename):
+    print get_dict_words(filename)
+
+def print_top(filename):
+    dict_words = get_dict_words(filename)
+    dict_words = sorted(dict_words.items(), key=operator.itemgetter(1), reverse=True)
+
+    print dict_words[0:20]
 
 ###
 
