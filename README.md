@@ -11,11 +11,11 @@ Roadmap to Python Learning
 
 
 ## Digital
-* Python Class / Google: https://developers.google.com/edu/python/?csw=1
+* :heavy_check_mark: Python Class / Google: https://developers.google.com/edu/python/?csw=1
 * Data Analysis: https://mode.com/python-tutorial/ 
 * How You Can Switch Languages And Get Up to Speed With Python as Quickly as Possible https://realpython.com/switching-to-python/
 * :heavy_check_mark: Patterns http://designpatternsgame.com/patterns 
-* Design Patterns https://refactoring.guru/design-patterns/python
+* :heavy_check_mark: Design Patterns https://refactoring.guru/design-patterns/python
 
 
 ## Testing
