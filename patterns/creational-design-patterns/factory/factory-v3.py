@@ -33,16 +33,15 @@ class XmlSerializer:
     def to_str(self):
         return et.tostring(self._element, encoding='unicode')
 
+class YamlSerializer(serializers.JsonSerializer):
+    def to_str(self):
+        return yaml.dump(self._current_object)
 
 class ObjectSerializer:
     def serialize(self, serializable, format):
         serializer = factory.get_serializer(format)
         serializable.serialize(serializer)
         return serializer.to_str()
-
-class YamlSerializer(serializers.JsonSerializer):
-    def to_str(self):
-        return yaml.dump(self._current_object)
 
 class Song:
     def __init__(self, song_id, title, artist):
@@ -56,16 +55,20 @@ class Song:
         serializer.add_property('artist', self.artist)
 
 class SerializerFactory:
+    def __init__(self):
+        self._creators = {}
+
+    def register_format(self, format, creator):
+        self._creators[format] = creator
+
     def get_serializer(self, format):
-        if format == 'JSON':
-            return JsonSerializer()
-        elif format == 'XML':
-            return XmlSerializer()
-        else:
+        creator = self._creators.get(format)
+        if not creator:
             raise ValueError(format)
+        return creator()
 
 
 factory = SerializerFactory()
 factory.register_format('JSON', JsonSerializer)
 factory.register_format('XML', XmlSerializer)
-serializers.factory.register_format('YAML', YamlSerializer)
+factory.register_format('YAML', YamlSerializer)
