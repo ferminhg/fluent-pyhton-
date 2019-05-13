@@ -64,14 +64,9 @@ def create_local_music_service(local_music_location, **_ignored):
 class MusicServiceProvider(object_factory.ObjectFactory):
     def get(self, service_id, **kwargs):
         return self.create(service_id, **kwargs)
-        
+
+# factory pattern
 services = MusicServiceProvider()
 services.register_builder('SPOTIFY', SpotifyServiceBuilder())
 services.register_builder('PANDORA', PandoraServiceBuilder())
 services.register_builder('LOCAL', create_local_music_service)
-
-# Omitting other implementation classes shown above
-factory = object_factory.ObjectFactory()
-factory.register_builder('SPOTIFY', SpotifyServiceBuilder())
-factory.register_builder('PANDORA', PandoraServiceBuilder())
-factory.register_builder('LOCAL', create_local_music_service)
