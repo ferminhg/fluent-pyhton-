@@ -1,5 +1,6 @@
 .vscode
 #add html html 
 google-python/google-python-exercises/babynames/*html
+google-python/google-python-exercises/logpuzzle/*.com
 .env
 .pytest_cache
