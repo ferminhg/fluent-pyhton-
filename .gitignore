@@ -5,3 +5,4 @@ google-python/google-python-exercises/logpuzzle/*.com
 .env
 .pytest_cache
 .venv
+*.pyc
