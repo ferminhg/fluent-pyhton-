@@ -1,6 +1,7 @@
 import functools
 import time
 import math
+from dataclasses import dataclass
 
 
 def do_twice(func):
@@ -72,7 +73,7 @@ def make_greetings(name, age=None):
 #make_greetings("J", age=10)
 
 # decorator with only function
-math.factorial = debug(math.factorial)
+#math.factorial = debug(math.factorial)
 
 def approximate_e(terms=18):
     return sum(1 / math.factorial(n) for n in range(terms))
@@ -98,3 +99,38 @@ def countdown(from_number):
         countdown(from_number - 1)
 
 # countdown(10)
+
+
+class TimeWaster:
+    @debug
+    def __init__(self, max_num):
+        self.max_num = max_num
+
+    @timer
+    def waste_time(self, num_times):
+        for _ in range(num_times):
+            sum([i**2 for i in range(self.max_num)])
+
+@dataclass
+class PlayingCard:
+    rank: str
+    suit: str
+
+@debug
+@do_twice
+def greet(name):
+    print(f"Hello {name}")
+
+def repeat_num(num_times):
+    def decorator_repeat_num(func):
+        @functools.wraps(func)
+        def wrapper_repeat(*args, **kwargs):
+            for _ in range(num_times):
+                value = func(*args, **kwargs)
+            return value
+        return wrapper_repeat
+    return decorator_repeat_num
+
+@repeat_num(num_times=4)
+def greet(name):
+    print(f"Hello {name}")
