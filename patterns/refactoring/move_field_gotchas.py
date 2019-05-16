@@ -8,7 +8,7 @@ class Animal:
                 drinks_milk=False):
         if age is None:
             warnings.warn('age not specified')
-        self.age
+        self.age = age
         self.has_scales = has_scales
         self.lays_eggs = lays_eggs
         self.drinks_milk = drinks_milk
@@ -24,7 +24,6 @@ class Pet:
             self.animal = maybe_age
 
         self.name = name
-        self.age = age
         self.treats_eaten = 0
 
     def give_treats(self, count):
@@ -63,7 +62,6 @@ class Pet:
         self.animal.age = new_age
 
 
-animal = Animal(has_scales=True, lays_eggs=True)
-pet = Pet('Gregory', 3, animal)
+animal = Animal(3, has_scales=True, lays_eggs=True)
+pet = Pet('Gregory', animal)
 
-pet = Pet('Gregory', 3, has_scales=True, lays_eggs=True)
