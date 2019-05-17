@@ -1,5 +1,6 @@
 import warnings
 
+
 class Pet:
     def __init__(self, name, age, *,
                  has_scales=False,
@@ -14,25 +15,29 @@ class Pet:
 
     def give_treats(self, count):
         self.treats_eaten += count
-    
+
     @property
     def needs_head_lamp(self):
         return (
-            self.has_scales and 
+            self.has_scales and
             self.lays_eggs and
             not self.drinks_milk)
 
 # Step 1: extract animal from pet
+
+
 class Animal:
     def __init__(self, *,
-                has_scales=False,
-                lays_eggs=False,
-                drinks_milk=False):
+                 has_scales=False,
+                 lays_eggs=False,
+                 drinks_milk=False):
         self.has_scales = has_scales
         self.lays_eggs = lays_eggs
         self.drinks_milk = drinks_milk
 
-# step2: add / intro parameter object 
+# step2: add / intro parameter object
+
+
 class Pet:
     def __init__(self, name, age,
                  animal=None, **kwargs):
@@ -48,11 +53,11 @@ class Pet:
 
     def give_treats(self, count):
         self.treats_eaten += count
-    
+
     @property
     def needs_head_lamp(self):
         return (
-            self.animal.has_scales and 
+            self.animal.has_scales and
             self.animal.lays_eggs and
             not self.animal.drinks_milk)
 
